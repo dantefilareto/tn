@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>TNListView</componentName>
+                <identifier>c_TNListView</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>TNCarTypeRecord</componentName>
+                <identifier>c_TNCarTypeRecord</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>details</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>related</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>TNCarDealership</masterLabel>
+    <template>
+        <name>TNCustomPageTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>
