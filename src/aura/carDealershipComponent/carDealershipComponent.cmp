@@ -1,18 +1,17 @@
-<aura:component implements="lightning:appHomeTemplate" description="App page with 2 columns." access="global" >
-    <aura:attribute name="sidebar" type="Aura.Component[]" description="Left region"/>
-    <aura:attribute name="details" type="Aura.Component[]" description="Right main region"/>
-    <aura:attribute name="related" type="Aura.Component[]" description="Right main region"/>
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" >
+    <aura:handler event="c:onCarTypeSelected" action="{!c.handleCarTypeSelectionEvent}"/>
+    <ltng:require styles="{!$Resource.TailwindCSS}" />
     <div>
         <lightning:layout class="slds-m-top_medium">
             <lightning:layoutItem flexibility="grow" size="{! $Browser.formFactor=='DESKTOP' ? '2' : '6' }" class="slds-m-right_small">
-                {!v.sidebar}
+                <c:carDealershipSidebar aura:id="sidebar"/>
             </lightning:layoutItem>
             <lightning:layoutItem flexibility="grow" class="slds-m-left_small">
                 <div>
-                    {!v.details}
+                    <c:carDealershipDetails aura:id="details"/>
                 </div>
                 <div>
-                    {!v.related}
+                    <c:carDealershipSales aura:id="sales" />
                 </div>
             </lightning:layoutItem>
         </lightning:layout>

@@ -1,7 +1,0 @@
-<design:component label="Left and Right regions">
-    <flexipage:template>
-        <flexipage:region name="sidebar" defaultWidth="SMALL" />
-        <flexipage:region name="details" defaultWidth="LARGE" />
-        <flexipage:region name="related" defaultWidth="LARGE" />
-    </flexipage:template>
-</design:component>

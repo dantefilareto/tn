@@ -1,0 +1,4 @@
+<!--c:onCarTypeSelected-->
+<aura:event type="APPLICATION" description="onCarTypeSelected">
+    <aura:attribute name="carTypeSFId" type="String" />
+</aura:event>

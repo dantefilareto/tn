@@ -1,0 +1,7 @@
+<!--
+ - Created by Dante on 08/07/2022.
+ -->
+
+<aura:component description="carDealershipDetails">
+    <div>Hello!</div>
+</aura:component>
