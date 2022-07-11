@@ -13,9 +13,8 @@
                 const detailsResponse = response.getReturnValue();
                 const details = detailsResponse['details'];
                 const carType = detailsResponse['carType'];
-                debugger;
-                const salesDetailsComponent =  component.get("v.related")[0]
-                salesDetailsComponent.renderSalesDetails(details, carType);
+                const detailsComponent =  component.find("details");
+                detailsComponent.renderDetails(JSON.stringify(carType), JSON.stringify(details));
             }
         }
         action.setParams({ carTypeSFId });

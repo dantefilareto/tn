@@ -3,7 +3,8 @@
  */
 
 ({
-    renderSalesDetails : function(a, b, c, d, e, f){
-        debugger;
+    renderSalesDetails : function(component, event){
+        const details = JSON.parse(event.getParam('arguments')['details']);
+        component.set('v.details', details);
     }
 });

@@ -3,5 +3,49 @@
  -->
 
 <aura:component description="carDealershipDetails">
-    <div>Hello!</div>
+    <aura:attribute name="carType" type="Map"/>
+    <aura:attribute name="details" type="Map"/>
+    <aura:method name="renderDetails" action="{!c.renderDetails}">
+        <aura:attribute name="carType" type="String"/>
+        <aura:attribute name="details" type="String"/>
+    </aura:method>
+    <div class="bg-white rounded-md p-4">
+        <h4 class="text-2xl font-bold border-b-4 pb-2">
+            Car type selected detail:
+            <aura:if isTrue="{!v.carType != null}">
+                <span class="text-gray-600">
+                    <span class="font-normal px-1">{!v.carType.brand} </span>
+                    <span class="font-normal px-1">{!v.carType.model} </span>
+                    <span class="font-normal text-sm">({!v.carType.bodyStyle})</span>
+                </span>
+            </aura:if>
+        </h4><br/>
+        <aura:if isTrue="{!v.carType == null}">
+            <p class="pl-2 text-gray-600">Select one car from the left sidebar</p><br/>
+        </aura:if>
+        <aura:if isTrue="{!AND(v.details == null, v.carType != null)}">
+            <p class="pl-2 text-gray-600">No sales info</p><br/>
+        </aura:if>
+        <aura:if isTrue="{!v.details != null}">
+            <div class="pl-2 text-gray-600 divide-y text-sm">
+                <div class="w-full grid grid-cols-2 text-left"><span>Total Quantity sold value</span>
+                    <p class="text-left font-bold ml-2">{!v.details.totalQttSold}</p>
+                </div>
+                <div class="w-full grid grid-cols-2 text-left"><span>Total Money Raised value</span>
+                    <p class="text-left font-bold ml-2">{!v.details.totalAmtRaised}</p>
+                </div>
+                <div class="w-full grid grid-cols-2 text-left"><span>Most expensive sale date during the period</span>
+                    <p class="text-left font-bold ml-2">{!v.details.mostExpSaleDate}</p>
+                </div>
+                <div class="w-full grid grid-cols-2 text-left">
+                    <span>Most expensive Car license plate during the period</span>
+                    <p class="text-left font-bold ml-2">{!v.details.mostExpLicensePlate}</p>
+                </div>
+                <div class="w-full grid grid-cols-2 text-left"><span>Most expensive sale price during the period</span>
+                    <p class="text-left font-bold ml-2">{!v.details.mostExpSalePrice}</p>
+                </div>
+            </div>
+
+        </aura:if>
+    </div>
 </aura:component>

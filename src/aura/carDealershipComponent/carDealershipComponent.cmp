@@ -1,4 +1,4 @@
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" >
+<aura:component controller="CarDealershipService" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" >
     <aura:handler event="c:onCarTypeSelected" action="{!c.handleCarTypeSelectionEvent}"/>
     <ltng:require styles="{!$Resource.TailwindCSS}" />
     <div>
@@ -7,12 +7,7 @@
                 <c:carDealershipSidebar aura:id="sidebar"/>
             </lightning:layoutItem>
             <lightning:layoutItem flexibility="grow" class="slds-m-left_small">
-                <div>
-                    <c:carDealershipDetails aura:id="details"/>
-                </div>
-                <div>
-                    <c:carDealershipSales aura:id="sales" />
-                </div>
+                <c:carDealershipDetails aura:id="details"/>
             </lightning:layoutItem>
         </lightning:layout>
     </div>
