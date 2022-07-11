@@ -71,7 +71,7 @@ public with sharing class CarDealershipService {
             }
         }
         // In case there are no sales we still have to display some data
-        if(carSales.isEmpty()){
+        if(carSales.isEmpty()) {
             CarType__c carType = [
                     SELECT Id, CarTypeId__c, Model__c, CarBrand__c, BodyStyle__c
                     FROM CarType__c
@@ -83,11 +83,13 @@ public with sharing class CarDealershipService {
             response.carType.brand = carType.CarBrand__c;
             response.carType.bodyStyle = carType.BodyStyle__c;
         }
-        response.details.totalQttSold = carSales.size();
-        response.details.totalAmtRaised = totalAmtRaised;
-        response.details.mostExpSaleDate = mostExpSaleDate;
-        response.details.mostExpLicensePlate = mostExpLicensePlate;
-        response.details.mostExpSalePrice = mostExpLicensePlateAmount;
+        else {
+            response.details.totalQttSold = carSales.size();
+            response.details.totalAmtRaised = totalAmtRaised;
+            response.details.mostExpSaleDate = mostExpSaleDate;
+            response.details.mostExpLicensePlate = mostExpLicensePlate;
+            response.details.mostExpSalePrice = mostExpLicensePlateAmount;
+        }
         return response;
     }
     public class CarTypesResponse {

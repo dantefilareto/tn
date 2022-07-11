@@ -23,26 +23,38 @@
         <aura:if isTrue="{!v.carType == null}">
             <p class="pl-2 text-gray-600">Select one car from the left sidebar</p><br/>
         </aura:if>
-        <aura:if isTrue="{!AND(v.details == null, v.carType != null)}">
-            <p class="pl-2 text-gray-600">No sales info</p><br/>
-        </aura:if>
         <aura:if isTrue="{!v.details != null}">
             <div class="pl-2 text-gray-600 divide-y text-sm">
                 <div class="w-full grid grid-cols-2 text-left"><span>Total Quantity sold value</span>
-                    <p class="text-left font-bold ml-2">{!v.details.totalQttSold}</p>
+                    <p class="text-left font-bold ml-2">
+                        <aura:if isTrue="{!v.details.totalQttSold!=null}">{!v.details.totalQttSold}</aura:if>
+                        <aura:if isTrue="{!v.details.totalQttSold==null}">No info</aura:if>
+                    </p>
                 </div>
                 <div class="w-full grid grid-cols-2 text-left"><span>Total Money Raised value</span>
-                    <p class="text-left font-bold ml-2">{!v.details.totalAmtRaised}</p>
+                    <p class="text-left font-bold ml-2">
+                        <aura:if isTrue="{!v.details.totalAmtRaised!=null}">{!v.details.totalAmtRaised}</aura:if>
+                        <aura:if isTrue="{!v.details.totalAmtRaised==null}">No info</aura:if>
+                    </p>
                 </div>
                 <div class="w-full grid grid-cols-2 text-left"><span>Most expensive sale date during the period</span>
-                    <p class="text-left font-bold ml-2">{!v.details.mostExpSaleDate}</p>
+                    <p class="text-left font-bold ml-2">
+                        <aura:if isTrue="{!v.details.mostExpSaleDate!=null}">{!v.details.mostExpSaleDate}</aura:if>
+                        <aura:if isTrue="{!v.details.mostExpSaleDate==null}">No info</aura:if>
+                    </p>
                 </div>
                 <div class="w-full grid grid-cols-2 text-left">
                     <span>Most expensive Car license plate during the period</span>
-                    <p class="text-left font-bold ml-2">{!v.details.mostExpLicensePlate}</p>
+                    <p class="text-left font-bold ml-2">
+                        <aura:if isTrue="{!v.details.mostExpLicensePlate!=null}">{!v.details.mostExpLicensePlate}</aura:if>
+                        <aura:if isTrue="{!v.details.mostExpLicensePlate==null}">No info</aura:if>
+                    </p>
                 </div>
                 <div class="w-full grid grid-cols-2 text-left"><span>Most expensive sale price during the period</span>
-                    <p class="text-left font-bold ml-2">{!v.details.mostExpSalePrice}</p>
+                    <p class="text-left font-bold ml-2">
+                        <aura:if isTrue="{!v.details.mostExpSalePrice!=null}">{!v.details.mostExpSalePrice}</aura:if>
+                        <aura:if isTrue="{!v.details.mostExpSalePrice==null}">No info</aura:if>
+                    </p>
                 </div>
             </div>
 
